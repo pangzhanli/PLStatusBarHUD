@@ -38,7 +38,13 @@ static NSTimer *timer_;
     }];
 }
 
-
+/**
+ *  显示带有文字和图片的消息
+ *
+ *  @param msg      文字
+ *  @param image    图片
+ *
+ */
 +(void)showMessage:(NSString *)msg image:(UIImage *)image{
     //显示窗口
     [self showWindow];
@@ -60,12 +66,30 @@ static NSTimer *timer_;
     timer_ = [NSTimer scheduledTimerWithTimeInterval:XMGMessageDuration target:self selector:@selector(hide) userInfo:nil repeats:nil];
     
 }
+
+/**
+ *  显示成功消息
+ *
+ *  @param msg      成功消息
+ */
 +(void)showSuccess:(NSString *)msg{
     [self showMessage:msg image:[UIImage imageNamed:@"PLStatusBarHUD.bundle/success"]];
 }
+
+/**
+ *  显示错误消息
+ *
+ *  @param msg      错误消息
+ */
 +(void)showError:(NSString *)msg{
     [self showMessage:msg image:[UIImage imageNamed:@"PLStatusBarHUD.bundle/error"]];
 }
+
+/**
+ *  显示正在加载信息
+ *
+ *  @param msg      文字
+ */
 +(void)showLoading:(NSString *)msg{
     //将原先的定时器置为无效
     [timer_ invalidate];
@@ -97,10 +121,20 @@ static NSTimer *timer_;
     [activityView startAnimating];
     
 }
+
+/**
+ *  显示普通消息
+ *
+ *  @param msg      文字
+ */
 +(void)showMessage:(NSString *)msg{
     [self showMessage:msg image:nil];
 }
 
+/**
+ *  隐藏
+ *
+ */
 +(void)hide{
     
     CGRect frame = window_.frame;
