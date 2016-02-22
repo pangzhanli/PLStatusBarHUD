@@ -25,8 +25,13 @@
     [super viewDidAppear:animated];
 }
 
+
 /** 测试master */
 -(void)thisIsMaster{
+    
+}
+/** 测试1 */
+-(void)test1{
     
 }
 
