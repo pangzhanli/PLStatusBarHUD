@@ -19,6 +19,10 @@
     [super viewDidLoad];
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+}
+
 - (IBAction)success {
     [PLStatusBarHUD showSuccess:@"成功了"];
 }
